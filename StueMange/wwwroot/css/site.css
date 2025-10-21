@@ -1,6 +1,5 @@
-
 :root {
-    --primary-color: #4A90E2; 
+    --primary-color: #4A90E2;
     --primary-hover: #357ABD;
     --primary-light: #DFEFFF;
     --secondary-color: #6C757D;
@@ -9,15 +8,6 @@
     --bg-light: #F7F9FC;
     --bg-white: #FFFFFF;
     --border-color: #E9ECEF;
-    --sidebar-bg: #FFFFFF;
-    --sidebar-width: 260px;
-    --sidebar-width-collapsed: 88px;
-    --success-color: #198754;
-    --danger-color: #DC3545;
-    --warning-color: #FFC107;
-    --info-color: #0DCAF0;
-    --success-light: #D1E7DD;
-    --danger-light: #F8D7DA;
     --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     --border-radius: 12px;
     --transition-speed: 0.3s;
@@ -35,6 +25,7 @@ body {
     background-color: var(--bg-light);
     font-size: 16px;
     overflow-x: hidden;
+    overflow-y: auto !important;
 }
 
 @keyframes fadeIn {
@@ -53,6 +44,8 @@ body {
 --------------------------------------------------------------*/
 .account-body {
     background-color: var(--bg-white);
+    height: 100vh;
+    overflow: hidden;
 }
 
 .account-wrapper {
@@ -65,7 +58,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 40px;
+    overflow-y: auto;
 }
 
 .form-container {
@@ -91,6 +84,8 @@ body {
     font-weight: 600;
     color: var(--text-dark);
     margin-bottom: .5rem;
+    text-align: right; 
+    display: block;
 }
 
 .input-group {
@@ -122,7 +117,7 @@ body {
 .account-form .form-select {
     border-radius: 0.6rem !important;
     border: 1px solid var(--border-color) !important;
-    padding: 1rem !important;
+    padding: 1rem 2.2rem 1rem 1rem !important;
     background-color: var(--bg-light);
     transition: all var(--transition-speed) ease;
     width: 100%;
@@ -148,6 +143,7 @@ body {
     width: 100%;
     background-color: var(--primary-color);
     border: none;
+    color: #fff;
 }
 
     .btn-submit:hover {
@@ -170,36 +166,106 @@ body {
 
 .branding-panel {
     flex: 1;
-    background: linear-gradient(45deg, var(--primary-color), var(--primary-hover));
+    background-color: var(--primary-color);
     display: flex;
-    justify-content: center;
+    justify-content: center; /* Center the main content */
     align-items: center;
     flex-direction: column;
     color: var(--bg-white);
     padding: 40px;
+    text-align: center;
+    position: relative; /* For footer positioning */
 }
 
 .branding-content {
-    text-align: center;
     animation: fadeIn 0.8s ease-in-out;
 }
 
-    .branding-content .logo {
-        font-size: 4rem;
+    .branding-content .logo-container {
+        border-radius: 1.5rem;
+        display: inline-block;
         margin-bottom: 1.5rem;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.1);
     }
 
+        .branding-content .logo-container img {
+            width: 200px;
+            height: 200px;
+            border-radius:10%;
+        }
+
     .branding-content h2 {
-        font-size: 2.5rem;
+        font-size: 1.8rem;
         font-weight: 700;
         margin-bottom: 1rem;
+        letter-spacing: 1px;
+        text-transform: uppercase;
     }
 
     .branding-content p {
-        font-size: 1.2rem;
-        max-width: 400px;
+        font-size: 1.1rem;
+        max-width: 350px;
         opacity: 0.9;
+        line-height: 1.6;
     }
+
+.branding-footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 0 2rem;
+}
+
+.footer-contact-info {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+    .footer-contact-info span {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+.footer-social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+    .footer-social-icons a {
+        color: #fff;
+        font-size: 1.2rem;
+        opacity: 0.8;
+        transition: all var(--transition-speed) ease;
+    }
+
+        .footer-social-icons a:hover {
+            opacity: 1;
+            transform: scale(1.1);
+        }
+
+.footer-credit {
+    font-size: 0.85rem;
+    opacity: 0.6;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    margin-top: 1rem;
+}
+
+    .footer-credit a {
+        color: #fff;
+        text-decoration: none;
+        font-weight: 600;
+    }
+
 
 .choice-container {
     display: flex;
@@ -242,6 +308,7 @@ body {
         font-size: 1.5rem;
         font-weight: 600;
         margin: 0;
+        text-wrap: nowrap;
     }
 
 @media (max-width: 992px) {

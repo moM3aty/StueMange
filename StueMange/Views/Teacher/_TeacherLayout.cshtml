@@ -16,6 +16,8 @@
     <!-- Stylesheets -->
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.rtl.min.css" />
     <link rel="stylesheet" href="~/css/teacher.css" asp-append-version="true" />
+    <link href="~/images/logo.png" rel="icon" />
+
 </head>
 <body class="admin-body">
 
@@ -50,6 +52,45 @@
         <main class="page-content">
             @RenderBody()
         </main>
+        <footer class="site-footer">
+            <div class="footer-content">
+                <div class="footer-section footer-about">
+                    <div class="logo-container">
+                        <img src="~/images/logo.png" alt="StueMange Logo" />
+                    </div>
+                    <p>نظام StueMange لمتابعة الطلاب، يوفر سهولة التواصل بين الإدارة، المدرسين، وأولياء الأمور.</p>
+                </div>
+                <div class="footer-section footer-links">
+                    <h5>روابط سريعة</h5>
+                    <ul>
+                        <li><a asp-controller="Teacher" asp-action="Index">فصولي</a></li>
+                        <li><a href="#">ملفي الشخصي</a></li>
+                        <li><a href="#">الدعم الفني</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section footer-contact">
+                    <h5>تواصل معنا</h5>
+                    <ul>
+                        <li><i class="bi bi-geo-alt-fill"></i> مصر ، سوهاج ، جرجا </li>
+                        <li><i class="bi bi-telephone-fill"></i>01286995956</li>
+                        <li><i class="bi bi-envelope-fill"></i>stuemange730@gmail.com </li>
+                    </ul>
+                </div>
+                <div class="footer-section footer-social">
+                    <h5>تابعنا</h5>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/share/1Cwdm8otNJ/"><i class="bi bi-facebook"></i></a>
+                        <a href="https://wa.me/201029629049"><i class="bi bi-whatsapp"></i></a>
+                        <a href="#"><i class="bi bi-twitter-x"></i></a>
+                        <a href="#"><i class="bi bi-instagram"></i></a>
+                        <a href="#"><i class="bi bi-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; @DateTime.Now.Year StueMange. تصميم وتطوير <a href="https://gmtweb.online/" target="_blank">GMTWEB</a>.
+            </div>
+        </footer>
     </div>
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>

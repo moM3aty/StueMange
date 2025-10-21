@@ -401,3 +401,97 @@
             background-color: var(--primary-light);
             color: var(--primary-color);
         }
+/* 5. Site Footer
+--------------------------------------------------------------*/
+.site-footer {
+    background-color: var(--bg-white);
+    color: var(--text-muted);
+    padding: 3rem 2rem 1.5rem 2rem;
+    border-top: 1px solid var(--border-color);
+    font-size: 0.9rem;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.footer-section h5 {
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 1rem;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+    .footer-section h5::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 30px;
+        height: 2px;
+        background-color: var(--primary-color);
+    }
+
+.footer-about .logo-container img {
+    width: 150px;
+    height: 150px;
+    border-radius: 10%;
+    margin-bottom: 1rem;
+    border: 3px solid var(--primary-light);
+}
+
+.footer-links ul, .footer-contact ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+    .footer-links ul li a, .footer-contact ul li {
+        color: var(--text-muted);
+        text-decoration: none;
+        display: block;
+        margin-bottom: 0.75rem;
+        transition: all 0.2s ease;
+    }
+
+        .footer-links ul li a:hover {
+            color: var(--primary-color);
+            transform: translateX(-5px);
+        }
+
+        .footer-contact ul li i {
+            margin-left: 0.75rem;
+            color: var(--primary-color);
+        }
+
+
+.footer-social .social-icons a {
+    color: var(--text-muted);
+    font-size: 1.5rem;
+    margin-left: 1rem;
+    transition: all 0.2s ease;
+}
+
+    .footer-social .social-icons a:hover {
+        color: var(--primary-color);
+        transform: scale(1.1);
+    }
+
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border-color);
+    font-size: 0.85rem;
+}
+
+    .footer-bottom a {
+        color: var(--primary-color);
+        text-decoration: none;
+        font-weight: 600;
+    }
+

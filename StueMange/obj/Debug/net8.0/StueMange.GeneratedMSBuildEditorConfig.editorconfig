@@ -9,149 +9,149 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = StueMange
 build_property.RootNamespace = StueMange
-build_property.ProjectDir = D:\Dev\StueMange\StueMange\
+build_property.ProjectDir = F:\GitHub\StueMange\StueMange\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = D:\Dev\StueMange\StueMange
+build_property.MSBuildProjectDirectory = F:\GitHub\StueMange\StueMange
 build_property._RazorSourceGeneratorDebug = 
 build_property.EffectiveAnalysisLevelStyle = 8.0
 build_property.EnableCodeStyleSeverity = 
 
-[D:/Dev/StueMange/StueMange/Views/Account/Login.cshtml]
+[F:/GitHub/StueMange/StueMange/Views/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Dev/StueMange/StueMange/Views/Account/Register.cshtml]
+[F:/GitHub/StueMange/StueMange/Views/Account/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Dev/StueMange/StueMange/Views/Account/RegisterParent.cshtml]
+[F:/GitHub/StueMange/StueMange/Views/Account/RegisterParent.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZWdpc3RlclBhcmVudC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Dev/StueMange/StueMange/Views/Account/RegisterTeacher.cshtml]
+[F:/GitHub/StueMange/StueMange/Views/Account/RegisterTeacher.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZWdpc3RlclRlYWNoZXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Dev/StueMange/StueMange/Views/Admin/CreateClass.cshtml]
+[F:/GitHub/StueMange/StueMange/Views/Admin/CreateClass.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQ3JlYXRlQ2xhc3MuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Dev/StueMange/StueMange/Views/Admin/CreateComplaint.cshtml]
+[F:/GitHub/StueMange/StueMange/Views/Admin/CreateComplaint.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQ3JlYXRlQ29tcGxhaW50LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Dev/StueMange/StueMange/Views/Admin/CreateStudent.cshtml]
+[F:/GitHub/StueMange/StueMange/Views/Admin/CreateStudent.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQ3JlYXRlU3R1ZGVudC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Dev/StueMange/StueMange/Views/Admin/EditClass.cshtml]
+[F:/GitHub/StueMange/StueMange/Views/Admin/EditClass.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRWRpdENsYXNzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Dev/StueMange/StueMange/Views/Admin/EditStudent.cshtml]
+[F:/GitHub/StueMange/StueMange/Views/Admin/EditStudent.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRWRpdFN0dWRlbnQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Dev/StueMange/StueMange/Views/Admin/Index.cshtml]
+[F:/GitHub/StueMange/StueMange/Views/Admin/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Dev/StueMange/StueMange/Views/Admin/ManageClasses.cshtml]
+[F:/GitHub/StueMange/StueMange/Views/Admin/ManageClasses.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cTWFuYWdlQ2xhc3Nlcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Dev/StueMange/StueMange/Views/Admin/ManageComplaints.cshtml]
+[F:/GitHub/StueMange/StueMange/Views/Admin/ManageComplaints.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cTWFuYWdlQ29tcGxhaW50cy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Dev/StueMange/StueMange/Views/Admin/ManageStudents.cshtml]
+[F:/GitHub/StueMange/StueMange/Views/Admin/ManageStudents.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cTWFuYWdlU3R1ZGVudHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Dev/StueMange/StueMange/Views/Admin/_AdminLayout.cshtml]
+[F:/GitHub/StueMange/StueMange/Views/Admin/_AdminLayout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cX0FkbWluTGF5b3V0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Dev/StueMange/StueMange/Views/Admin/_ViewStart.cshtml]
+[F:/GitHub/StueMange/StueMange/Views/Admin/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Dev/StueMange/StueMange/Views/Home/Error.cshtml]
+[F:/GitHub/StueMange/StueMange/Views/Home/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxFcnJvci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Dev/StueMange/StueMange/Views/Home/Index.cshtml]
+[F:/GitHub/StueMange/StueMange/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Dev/StueMange/StueMange/Views/Home/Privacy.cshtml]
+[F:/GitHub/StueMange/StueMange/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Dev/StueMange/StueMange/Views/Parent/Index.cshtml]
+[F:/GitHub/StueMange/StueMange/Views/Parent/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFyZW50XEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Dev/StueMange/StueMange/Views/Parent/StudentDetails.cshtml]
+[F:/GitHub/StueMange/StueMange/Views/Parent/StudentDetails.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFyZW50XFN0dWRlbnREZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Dev/StueMange/StueMange/Views/Parent/_ParentLayout.cshtml]
+[F:/GitHub/StueMange/StueMange/Views/Parent/_ParentLayout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFyZW50XF9QYXJlbnRMYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Dev/StueMange/StueMange/Views/Parent/_ViewStart.cshtml]
+[F:/GitHub/StueMange/StueMange/Views/Parent/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFyZW50XF9WaWV3U3RhcnQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Dev/StueMange/StueMange/Views/Shared/_ValidationScriptsPartial.cshtml]
+[F:/GitHub/StueMange/StueMange/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Dev/StueMange/StueMange/Views/Teacher/AddGrade.cshtml]
+[F:/GitHub/StueMange/StueMange/Views/Teacher/AddGrade.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVhY2hlclxBZGRHcmFkZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Dev/StueMange/StueMange/Views/Teacher/ClassDetails.cshtml]
+[F:/GitHub/StueMange/StueMange/Views/Teacher/ClassDetails.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVhY2hlclxDbGFzc0RldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Dev/StueMange/StueMange/Views/Teacher/EditGrade.cshtml]
+[F:/GitHub/StueMange/StueMange/Views/Teacher/EditGrade.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVhY2hlclxFZGl0R3JhZGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Dev/StueMange/StueMange/Views/Teacher/Index.cshtml]
+[F:/GitHub/StueMange/StueMange/Views/Teacher/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVhY2hlclxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Dev/StueMange/StueMange/Views/Teacher/ManageAttendance.cshtml]
+[F:/GitHub/StueMange/StueMange/Views/Teacher/ManageAttendance.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVhY2hlclxNYW5hZ2VBdHRlbmRhbmNlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Dev/StueMange/StueMange/Views/Teacher/ManageGrades.cshtml]
+[F:/GitHub/StueMange/StueMange/Views/Teacher/ManageGrades.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVhY2hlclxNYW5hZ2VHcmFkZXMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Dev/StueMange/StueMange/Views/Teacher/_TeacherLayout.cshtml]
+[F:/GitHub/StueMange/StueMange/Views/Teacher/_TeacherLayout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVhY2hlclxfVGVhY2hlckxheW91dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Dev/StueMange/StueMange/Views/Teacher/_ViewStart.cshtml]
+[F:/GitHub/StueMange/StueMange/Views/Teacher/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVhY2hlclxfVmlld1N0YXJ0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Dev/StueMange/StueMange/Views/_ViewImports.cshtml]
+[F:/GitHub/StueMange/StueMange/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Dev/StueMange/StueMange/Views/_ViewStart.cshtml]
+[F:/GitHub/StueMange/StueMange/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Dev/StueMange/StueMange/Views/Shared/_Layout.cshtml]
+[F:/GitHub/StueMange/StueMange/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-pkthdv6d27

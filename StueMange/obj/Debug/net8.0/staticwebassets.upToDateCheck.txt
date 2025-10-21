@@ -1,8 +1,6 @@
-wwwroot\css\admin.css
-wwwroot\css\parent.css
-wwwroot\css\site.css
 wwwroot\css\teacher.css
 wwwroot\favicon.ico
+wwwroot\images\logo.png
 wwwroot\js\site.js
 wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css
 wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css.map
@@ -61,3 +59,6 @@ wwwroot\lib\jquery\dist\jquery.js
 wwwroot\lib\jquery\dist\jquery.min.js
 wwwroot\lib\jquery\dist\jquery.min.map
 wwwroot\lib\jquery\LICENSE.txt
+wwwroot\css\admin.css
+wwwroot\css\parent.css
+wwwroot\css\site.css
