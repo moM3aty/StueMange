@@ -1,0 +1,44 @@
+﻿@model CreateComplaintViewModel
+@{
+    ViewData["Title"] = "تسجيل شكوى جديدة";
+}
+
+<div class="page-header">
+    <h1 class="page-title">@ViewData["Title"]</h1>
+</div>
+
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-body">
+                <form asp-action="CreateComplaint" class="dashboard-form">
+                    <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+                    <div class="mb-3">
+                        <label asp-for="StudentId" class="form-label"></label>
+                        <select asp-for="StudentId" class="form-select" asp-items="(SelectList)ViewBag.StudentsList">
+                            <option value="">-- اختر الطالب --</option>
+                        </select>
+                        <span asp-validation-for="StudentId" class="text-danger"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="Description" class="form-label"></label>
+                        <textarea asp-for="Description" class="form-control" rows="4"></textarea>
+                        <span asp-validation-for="Description" class="text-danger"></span>
+                    </div>
+
+                    <div class="mt-4 d-flex justify-content-end gap-2">
+                        <a asp-action="ManageComplaints" class="btn btn-secondary">إلغاء</a>
+                        <button type="submit" class="btn btn-primary">تسجيل الشكوى</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
+

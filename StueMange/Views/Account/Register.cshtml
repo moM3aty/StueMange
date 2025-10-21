@@ -1,0 +1,26 @@
+﻿@{
+    ViewData["Title"] = "إنشاء حساب جديد";
+    Layout = "_Layout";
+}
+
+<div class="container choice-container">
+    <div class="form-container text-center">
+        <h1>إنشاء حساب جديد</h1>
+        <p>من فضلك اختر نوع الحساب الذي تود إنشاءه.</p>
+    </div>
+    <div class="row g-4 justify-content-center">
+        <div class="col-md-5">
+            <a asp-action="RegisterTeacher" class="choice-card">
+                <i class="bi bi-person-video3"></i>
+                <h3>أنا مدرس</h3>
+            </a>
+        </div>
+        <div class="col-md-5">
+            <a asp-action="RegisterParent" class="choice-card">
+                <i class="bi bi-person-heart"></i>
+                <h3>أنا ولي أمر</h3>
+            </a>
+        </div>
+    </div>
+</div>
+

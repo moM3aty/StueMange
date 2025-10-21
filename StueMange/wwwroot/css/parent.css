@@ -1,0 +1,483 @@
+﻿/*
+    StueMange - Parent & Dashboard Panel Stylesheet
+    Version: 2.0
+    Author: Gemini
+*/
+
+/* 1. Variables & Base Setup
+--------------------------------------------------------------*/
+:root {
+    --primary-color: #4A90E2; /* A professional, calm blue */
+    --primary-light: #EAF2FB;
+    --success-color: #28a745;
+    --success-light: #eaf6ec;
+    --danger-color: #dc3545;
+    --danger-light: #fbebed;
+    --text-dark: #212529;
+    --text-muted: #6c757d;
+    --bg-light: #f8f9fa;
+    --bg-white: #ffffff;
+    --border-color: #dee2e6;
+    --sidebar-bg: var(--bg-white);
+    --sidebar-width: 260px;
+    --sidebar-width-collapsed: 80px;
+    --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    --border-radius: 0.8rem;
+    --transition-speed: 0.3s;
+}
+
+.admin-body {
+    font-family: 'Cairo', sans-serif;
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    display: flex; /* Key for sidebar layout */
+}
+
+
+/* 2. Layout (Sidebar, Top Bar, Main Content)
+--------------------------------------------------------------*/
+.sidebar {
+    width: var(--sidebar-width);
+    background-color: var(--sidebar-bg);
+    border-left: 1px solid var(--border-color); /* For RTL */
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    transition: width var(--transition-speed) ease;
+    z-index: 1000;
+}
+
+    .sidebar.collapsed {
+        width: var(--sidebar-width-collapsed);
+    }
+
+.sidebar-header {
+    padding: 0 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+    height: 70px;
+    display: flex;
+    align-items: center;
+}
+
+.sidebar-logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--primary-color);
+    font-size: 1.6rem;
+    font-weight: 700;
+    transition: opacity var(--transition-speed) ease;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+    .sidebar-logo i {
+        font-size: 2rem;
+        flex-shrink: 0;
+    }
+
+    .sidebar-logo span {
+        margin-right: 0.75rem;
+    }
+
+.sidebar.collapsed .sidebar-logo span {
+    opacity: 0;
+    display: none;
+}
+
+.sidebar-nav {
+    flex-grow: 1;
+    padding: 1rem;
+    overflow-y: auto;
+}
+
+    .sidebar-nav .nav-link {
+        display: flex;
+        align-items: center;
+        padding: 0.85rem 1.25rem;
+        border-radius: 0.6rem;
+        color: var(--text-muted);
+        text-decoration: none;
+        margin-bottom: 0.5rem;
+        transition: all var(--transition-speed) ease;
+        white-space: nowrap;
+        font-weight: 500;
+        overflow: hidden;
+    }
+
+
+        .sidebar-nav .nav-link i {
+            font-size: 1.4rem;
+            margin-left: 1rem; 
+            transition: margin var(--transition-speed) ease;
+            width: 24px;
+            text-align: center;
+            flex-shrink: 0;
+        }
+
+.sidebar.collapsed .nav-link i {
+    margin-left: 0;
+}
+
+.sidebar.collapsed .nav-link span {
+    opacity: 0;
+    width: 0;
+    overflow: hidden;
+}
+
+.sidebar-nav .nav-link:hover {
+    background-color: var(--primary-light);
+    color: var(--primary-color);
+}
+
+.sidebar-nav .nav-link.active {
+    background-color: var(--primary-color);
+    color: var(--bg-white);
+    box-shadow: 0 4px 8px rgba(74, 144, 226, 0.2);
+}
+
+.sidebar-footer {
+    padding: 1rem;
+    border-top: 1px solid var(--border-color);
+}
+
+    .sidebar-footer .logout-btn span {
+        transition: opacity var(--transition-speed) ease;
+    }
+
+.sidebar.collapsed .sidebar-footer .logout-btn span {
+    opacity: 0;
+    display: none;
+}
+
+
+.logout-btn {
+    width: 100%;
+    border: 1px solid red;
+    color: red !important;
+    background: transparent;
+}
+
+    .logout-btn:hover {
+        color: #fff !important;
+    }
+
+.main-content {
+    flex-grow: 1;
+    margin-right: var(--sidebar-width); /* For RTL */
+    transition: margin-right var(--transition-speed) ease;
+}
+
+    .main-content.expanded {
+        margin-right: var(--sidebar-width-collapsed); /* For RTL */
+    }
+
+.top-bar {
+    background-color: var(--bg-white);
+    padding: 0 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+.sidebar-toggle {
+    background: none;
+    border: none;
+    font-size: 1.75rem;
+    cursor: pointer;
+    color: var(--text-muted);
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-weight: 500;
+}
+
+    .user-profile i {
+        font-size: 1.75rem;
+        color: var(--text-muted);
+    }
+
+.page-content {
+    padding: 2rem;
+    animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 3. Content Elements (Headers, Cards, Tables, Forms)
+--------------------------------------------------------------*/
+.page-header {
+    margin-bottom: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.page-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+.card {
+    background-color: var(--bg-white) !important;
+    border: none !important;
+    border-radius: var(--border-radius) !important;
+    box-shadow: var(--box-shadow) !important;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+}
+
+.card-header {
+    background-color: transparent !important; /* Make it cleaner */
+    padding: 1.25rem 1.5rem !important;
+    border-bottom: 1px solid var(--border-color) !important;
+}
+    /* Style for tabs inside a card header */
+    .card-header .nav-tabs {
+        border-bottom: 0 !important;
+    }
+
+    .card-header .nav-link {
+        color: var(--text-muted) !important;
+        font-weight: 600;
+        border: 0 !important;
+        border-bottom: 3px solid transparent !important;
+        padding: 0.75rem 0.25rem !important;
+        margin-left: 2rem; /* Spacing for RTL */
+        transition: all 0.2s ease;
+    }
+
+        .card-header .nav-link.active {
+            color: var(--primary-color) !important;
+            border-bottom-color: var(--primary-color) !important;
+        }
+
+
+.card-body {
+    padding: 1.5rem !important;
+}
+
+/* Stat Cards for Dashboard */
+.stat-card {
+    display: flex;
+    align-items: center;
+    padding: 1.5rem;
+    transition: all var(--transition-speed) ease;
+}
+
+    .stat-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 16px rgba(0,0,0,0.07);
+    }
+
+    .stat-card .icon-circle {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: 1rem; /* For RTL */
+    }
+
+        .stat-card .icon-circle i {
+            font-size: 2rem;
+            color: var(--bg-white);
+        }
+
+    .stat-card .stat-info h5 {
+        font-weight: 700;
+        color: var(--text-dark);
+        font-size: 1.5rem;
+        margin-bottom: 0.25rem;
+    }
+
+    .stat-card .stat-info p {
+        font-size: 1rem;
+        font-weight: 500;
+        color: var(--text-muted);
+        margin-bottom: 0;
+    }
+
+.bg-icon-primary {
+    background-color: var(--primary-color);
+}
+
+.bg-icon-success {
+    background-color: var(--success-color);
+}
+
+.bg-icon-danger {
+    background-color: var(--danger-color);
+}
+
+
+/* Tables */
+.table {
+    border-color: var(--border-color) !important;
+}
+
+    .table th {
+        font-weight: 600;
+        color: var(--text-dark);
+        background-color: var(--bg-light);
+        border-bottom-width: 2px !important;
+    }
+
+    .table > :not(caption) > * > * {
+        padding: 1rem !important;
+        vertical-align: middle;
+    }
+
+.table-hover > tbody > tr {
+    transition: background-color var(--transition-speed) ease;
+}
+
+    .table-hover > tbody > tr:hover > * {
+        background-color: var(--bg-light) !important;
+    }
+
+.table-actions .btn {
+    padding: 0.4rem 0.75rem !important;
+    margin: 0 0.25rem;
+}
+
+    .table-actions .btn i {
+        vertical-align: middle;
+    }
+
+
+/* Forms */
+.dashboard-form .form-label {
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: .5rem;
+}
+
+.dashboard-form .form-control,
+.dashboard-form .form-select {
+    border-radius: 0.6rem !important;
+    border: 1px solid var(--border-color) !important;
+    padding: 0.75rem 1rem !important;
+    background-color: var(--bg-white);
+    transition: all var(--transition-speed) ease;
+}
+
+    .dashboard-form .form-control:focus,
+    .dashboard-form .form-select:focus {
+        border-color: var(--primary-color) !important;
+        box-shadow: 0 0 0 0.25rem var(--primary-light) !important;
+    }
+
+/* Badges */
+.badge {
+    padding: 0.5em 0.9em;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.bg-success-soft {
+    background-color: var(--success-light) !important;
+}
+
+.text-success-dark {
+    color: var(--success-color) !important;
+}
+
+.bg-danger-soft {
+    background-color: var(--danger-light) !important;
+}
+
+.text-danger-dark {
+    color: var(--danger-color) !important;
+}
+
+
+/* 4. Custom Components (Tag Input)
+--------------------------------------------------------------*/
+.tags-input-wrapper {
+    background-color: var(--bg-white);
+    border: 1px solid var(--border-color);
+    border-radius: 0.6rem;
+    padding: 8px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+    min-height: 50px;
+}
+
+.tag-item {
+    background-color: var(--primary-light);
+    color: var(--primary-color);
+    padding: 6px 12px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+    .tag-item .remove-tag {
+        cursor: pointer;
+        font-size: 1.1rem;
+        line-height: 1;
+    }
+
+#teacher-search {
+    flex-grow: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    padding: 5px;
+}
+
+#teacher-dropdown {
+    list-style: none;
+    padding: 0.5rem;
+    margin: 5px 0 0 0;
+    background: var(--bg-white);
+    border: 1px solid var(--border-color);
+    border-radius: 0.6rem;
+    max-height: 200px;
+    overflow-y: auto;
+    box-shadow: var(--box-shadow);
+    z-index: 1050;
+}
+
+    #teacher-dropdown li {
+        padding: 10px 15px;
+        cursor: pointer;
+        transition: background-color 0.2s ease;
+        border-radius: 0.4rem;
+    }
+
+        #teacher-dropdown li:hover {
+            background-color: var(--primary-light);
+            color: var(--primary-color);
+        }

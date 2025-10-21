@@ -1,0 +1,56 @@
+﻿@model Class
+@{
+    ViewData["Title"] = $"تفاصيل فصل {Model.Name}";
+    var teacher = ViewBag.Teacher as Teacher;
+}
+
+<div class="page-header">
+    <h1 class="page-title">تفاصيل فصل: @Model.Name</h1>
+    <a asp-action="Index" class="btn btn-secondary"><i class="bi bi-arrow-right"></i> العودة لفصولي</a>
+</div>
+
+<div class="row">
+    <div class="col-md-6 mb-4">
+        <div class="card h-100">
+            <div class="card-body text-center">
+                <i class="bi bi-calendar-check text-success" style="font-size: 3rem;"></i>
+                <h5 class="card-title mt-3">إدارة الحضور</h5>
+                <p class="card-text text-muted">تسجيل حضور وغياب الطلاب لهذا الفصل.</p>
+                <a asp-action="ManageAttendance" asp-route-id="@Model.Id" class="btn btn-success">الانتقال</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 mb-4">
+        <div class="card h-100">
+            <div class="card-body text-center">
+                <i class="bi bi-award text-primary" style="font-size: 3rem;"></i>
+                <h5 class="card-title mt-3">إدارة الدرجات</h5>
+                <p class="card-text text-muted">إدخال وتعديل درجات مادة "@teacher?.Subject" لطلاب هذا الفصل.</p>
+                <a asp-action="ManageGrades" asp-route-id="@Model.Id" class="btn btn-primary">الانتقال</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-body">
+        <h5 class="card-title mb-4">قائمة الطلاب (@Model.Students.Count)</h5>
+        @if (Model.Students.Any())
+        {
+            <ul class="list-group list-group-flush">
+                @foreach (var student in Model.Students)
+                {
+                    <li class="list-group-item d-flex align-items-center">
+                        <i class="bi bi-person-circle me-3 text-muted"></i>
+                        @student.FullName
+                    </li>
+                }
+            </ul>
+        }
+        else
+        {
+            <p class="text-center text-muted mb-0">لا يوجد طلاب في هذا الفصل حالياً.</p>
+        }
+    </div>
+</div>
+

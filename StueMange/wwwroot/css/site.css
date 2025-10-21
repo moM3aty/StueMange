@@ -1,0 +1,251 @@
+
+:root {
+    --primary-color: #4A90E2; 
+    --primary-hover: #357ABD;
+    --primary-light: #DFEFFF;
+    --secondary-color: #6C757D;
+    --text-dark: #343A40;
+    --text-muted: #6C757D;
+    --bg-light: #F7F9FC;
+    --bg-white: #FFFFFF;
+    --border-color: #E9ECEF;
+    --sidebar-bg: #FFFFFF;
+    --sidebar-width: 260px;
+    --sidebar-width-collapsed: 88px;
+    --success-color: #198754;
+    --danger-color: #DC3545;
+    --warning-color: #FFC107;
+    --info-color: #0DCAF0;
+    --success-light: #D1E7DD;
+    --danger-light: #F8D7DA;
+    --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    --border-radius: 12px;
+    --transition-speed: 0.3s;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Cairo', sans-serif;
+    direction: rtl;
+    background-color: var(--bg-light);
+    font-size: 16px;
+    overflow-x: hidden;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 2. Account Pages (Login, Register) Styles
+--------------------------------------------------------------*/
+.account-body {
+    background-color: var(--bg-white);
+}
+
+.account-wrapper {
+    display: flex;
+    min-height: 100vh;
+}
+
+.form-panel {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+}
+
+.form-container {
+    width: 100%;
+    max-width: 420px;
+    animation: fadeIn 0.6s ease-in-out;
+}
+
+    .form-container h1 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 0.75rem;
+        color: var(--text-dark);
+    }
+
+    .form-container p {
+        font-size: 1.1rem;
+        color: var(--text-muted);
+        margin-bottom: 2.5rem;
+    }
+
+.account-form .form-label {
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: .5rem;
+}
+
+.input-group {
+    position: relative;
+}
+
+    .input-group .form-control,
+    .input-group .form-select {
+        padding-right: 3rem !important;
+    }
+
+    .input-group .input-group-icon {
+        position: absolute;
+        top: 50%;
+        right: 1rem;
+        transform: translateY(-50%);
+        color: var(--text-muted);
+        pointer-events: none;
+        font-size: 1.2rem;
+        transition: color var(--transition-speed) ease;
+    }
+
+.form-control:focus + .input-group-icon,
+.form-select:focus + .input-group-icon {
+    color: var(--primary-color);
+}
+
+.account-form .form-control,
+.account-form .form-select {
+    border-radius: 0.6rem !important;
+    border: 1px solid var(--border-color) !important;
+    padding: 1rem !important;
+    background-color: var(--bg-light);
+    transition: all var(--transition-speed) ease;
+    width: 100%;
+}
+
+.account-form .mb-4 {
+    margin-bottom: 1.75rem !important;
+}
+
+.account-form .form-control:focus,
+.account-form .form-select:focus {
+    border-color: var(--primary-color) !important;
+    box-shadow: 0 0 0 0.25rem var(--primary-light), 0 2px 8px rgba(0,0,0,0.05) !important;
+    background-color: var(--bg-white);
+}
+
+.btn-submit {
+    border-radius: 0.6rem !important;
+    padding: 1rem !important;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all var(--transition-speed) ease;
+    width: 100%;
+    background-color: var(--primary-color);
+    border: none;
+}
+
+    .btn-submit:hover {
+        background-color: var(--primary-hover);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 10px rgba(74, 144, 226, 0.3);
+    }
+
+.bottom-link {
+    text-align: center;
+    margin-top: 1.5rem;
+    color: var(--text-muted);
+}
+
+    .bottom-link a {
+        color: var(--primary-color);
+        font-weight: 600;
+        text-decoration: none;
+    }
+
+.branding-panel {
+    flex: 1;
+    background: linear-gradient(45deg, var(--primary-color), var(--primary-hover));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: var(--bg-white);
+    padding: 40px;
+}
+
+.branding-content {
+    text-align: center;
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+    .branding-content .logo {
+        font-size: 4rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .branding-content h2 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+    }
+
+    .branding-content p {
+        font-size: 1.2rem;
+        max-width: 400px;
+        opacity: 0.9;
+    }
+
+.choice-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
+    padding: 2rem;
+}
+
+.choice-card {
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    padding: 2.5rem;
+    text-decoration: none;
+    color: var(--text-dark);
+    transition: all var(--transition-speed) ease;
+    background-color: var(--bg-white);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+    .choice-card:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--box-shadow);
+        border-color: var(--primary-color);
+    }
+
+    .choice-card i {
+        font-size: 4rem;
+        color: var(--primary-color);
+        margin-bottom: 1.5rem;
+    }
+
+    .choice-card h3 {
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin: 0;
+    }
+
+@media (max-width: 992px) {
+    .branding-panel {
+        display: none;
+    }
+}

@@ -1,0 +1,48 @@
+﻿@model ManageGradesViewModel
+
+@{
+    ViewData["Title"] = $"إدارة درجات فصل {Model.ClassName}";
+}
+
+<div class="page-header">
+    <div>
+        <h1 class="page-title">@ViewData["Title"]</h1>
+        <p class="text-muted mb-0">المادة: @Model.Subject</p>
+    </div>
+    <a asp-action="AddGrade" asp-route-classId="@Model.ClassId" class="btn btn-primary"><i class="bi bi-plus-lg"></i> إضافة درجة جديدة</a>
+</div>
+
+<div class="card">
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-hover align-middle">
+                <thead>
+                    <tr>
+                        <th>اسم الاختبار</th>
+                        <th>الطالب</th>
+                        <th>الدرجة</th>
+                        <th>التاريخ</th>
+                        <th class="text-center">الإجراءات</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var grade in Model.Grades)
+                    {
+                        <tr>
+                            <td>@grade.ExamName</td>
+                            <td>@grade.Student.FullName</td>
+                            <td>@grade.Score / @grade.MaxScore</td>
+                            <td>@grade.Date.ToString("yyyy-MM-dd")</td>
+                            <td class="text-center table-actions">
+                                <a asp-action="EditGrade" asp-route-id="@grade.Id" class="btn btn-sm btn-outline-primary">
+                                    <i class="bi bi-pencil"></i> تعديل
+                                </a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+

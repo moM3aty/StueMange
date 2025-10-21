@@ -1,0 +1,46 @@
+﻿@model LoginViewModel
+@{
+    ViewData["Title"] = "تسجيل الدخول";
+    Layout = "_Layout";
+}
+
+<div class="account-wrapper">
+    <div class="form-panel">
+        <div class="form-container">
+            <h1>مرحباً بعودتك!</h1>
+            <p>قم بتسجيل الدخول للمتابعة إلى لوحة التحكم.</p>
+            <form asp-action="Login" method="post" class="account-form">
+                <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+                <div class="mb-3 text-end">
+                    <label asp-for="Username" class="form-label"></label>
+                    <input asp-for="Username" class="form-control" />
+                    <span asp-validation-for="Username" class="text-danger"></span>
+                </div>
+                <div class="mb-3 text-end">
+                    <label asp-for="Password" class="form-label"></label>
+                    <input asp-for="Password" class="form-control" />
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                </div>
+                <div class="mb-4 form-check text-end">
+                    <input class="form-check-input" asp-for="RememberMe" />
+                    <label class="form-check-label" asp-for="RememberMe"></label>
+                </div>
+                <div class="d-grid mt-4 " style="margin:20px 0 !important">
+                    <button type="submit" class="btn btn-primary btn-submit text-white" style="font-family:Cairo;"> تسجيل دخول</button>
+                </div>
+                <p class="bottom-link">ليس لديك حساب؟ <a asp-action="Register">سجل الآن</a></p>
+            </form>
+        </div>
+    </div>
+    <div class="branding-panel">
+        <div class="branding-content">
+            <h2>StueMange</h2>
+            <p>نظام متكامل لمتابعة أبنائكم وتسهيل التواصل بين أولياء الأمور، المدرسين، والإدارة.</p>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
+

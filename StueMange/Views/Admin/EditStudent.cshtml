@@ -1,0 +1,65 @@
+﻿@model EditStudentViewModel
+@{
+    ViewData["Title"] = "تعديل بيانات الطالب";
+}
+
+<div class="page-header">
+    <h1 class="page-title">@ViewData["Title"]</h1>
+</div>
+
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-body">
+                <form asp-action="EditStudent" class="dashboard-form">
+                    <input type="hidden" asp-for="Id" />
+                    <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+                    <div class="mb-3">
+                        <label asp-for="FullName" class="form-label"></label>
+                        <input asp-for="FullName" class="form-control" />
+                        <span asp-validation-for="FullName" class="text-danger"></span>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label asp-for="DateOfBirth" class="form-label"></label>
+                            <input asp-for="DateOfBirth" class="form-control" type="date" />
+                            <span asp-validation-for="DateOfBirth" class="text-danger"></span>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label asp-for="StudentType" class="form-label"></label>
+                            <select asp-for="StudentType" asp-items="Html.GetEnumSelectList<StudentType>()" class="form-select"></select>
+                            <span asp-validation-for="StudentType" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label asp-for="ClassId" class="form-label"></label>
+                            <select asp-for="ClassId" class="form-select" asp-items="(SelectList)ViewBag.ClassesList"></select>
+                            <span asp-validation-for="ClassId" class="text-danger"></span>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label asp-for="ParentId" class="form-label"></label>
+                            <select asp-for="ParentId" class="form-select" asp-items="(SelectList)ViewBag.ParentsList">
+                                <option value="">-- لا يوجد ولي أمر --</option>
+                            </select>
+                            <span asp-validation-for="ParentId" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="mt-4 d-flex justify-content-end gap-2">
+                        <a asp-action="ManageStudents" class="btn btn-secondary">إلغاء</a>
+                        <button type="submit" class="btn btn-primary">حفظ التعديلات</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
+

@@ -1,0 +1,77 @@
+﻿@model RegisterParentViewModel
+
+@{
+    ViewData["Title"] = "تسجيل ولي أمر جديد";
+    Layout = "_Layout";
+}
+
+<div class="account-wrapper">
+    <div class="form-panel">
+        <div class="form-container">
+            <h1>إنشاء حساب ولي أمر</h1>
+            <p>أدخل بياناتك واختر ابنك/ابنتك من القائمة.</p>
+            <form asp-action="RegisterParent" method="post" class="account-form">
+                <div asp-validation-summary="All" class="text-danger mb-3"></div>
+
+                <div class="mb-4 text-end">
+                    <label asp-for="FullName" class="form-label"></label>
+                    <div class="input-group">
+                        <input asp-for="FullName" class="form-control" />
+                        <i class="bi bi-person input-group-icon"></i>
+                    </div>
+                </div>
+
+                <div class="mb-4 text-end">
+                    <label asp-for="PhoneNumber" class="form-label"></label>
+                    <div class="input-group">
+                        <input asp-for="PhoneNumber" class="form-control" />
+                        <i class="bi bi-telephone input-group-icon"></i>
+                    </div>
+                </div>
+
+                <div class="mb-4 text-end">
+                    <label asp-for="StudentId" class="form-label"></label>
+                    <div class="input-group">
+                        <select asp-for="StudentId" asp-items="ViewBag.StudentsList" class="form-select">
+                            <option value="">-- اختر الطالب --</option>
+                        </select>
+                        <i class="bi bi-people input-group-icon"></i>
+                    </div>
+                </div>
+
+                <div class="mb-4 text-end">
+                    <label asp-for="Password" class="form-label"></label>
+                    <div class="input-group">
+                        <input asp-for="Password" class="form-control" type="password" />
+                        <i class="bi bi-lock input-group-icon"></i>
+                    </div>
+                </div>
+
+                <div class="mb-4 text-end">
+                    <label asp-for="ConfirmPassword" class="form-label"></label>
+                    <div class="input-group">
+                        <input asp-for="ConfirmPassword" class="form-control" type="password" />
+                        <i class="bi bi-lock-fill input-group-icon"></i>
+                    </div>
+                </div>
+
+                <div class="d-grid mt-4 " style="margin:20px 0 !important">
+                    <button type="submit" class="btn btn-primary btn-submit text-white" style="font-family:Cairo;">إنشاء الحساب</button>
+                </div>
+                <p class="bottom-link">لديك حساب بالفعل؟ <a asp-action="Login">تسجيل الدخول</a></p>
+            </form>
+        </div>
+    </div>
+    <div class="branding-panel">
+        <div class="branding-content">
+            <h2>StueMange</h2>
+            <p>نظام متكامل لمتابعة أبنائكم وتسهيل التواصل بين أولياء الأمور، المدرسين، والإدارة.</p>
+        </div>
+    </div>
+</div>
+
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
+

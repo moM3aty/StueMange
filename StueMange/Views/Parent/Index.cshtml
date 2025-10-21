@@ -1,0 +1,38 @@
+﻿@model IEnumerable<Student>
+@{
+    ViewData["Title"] = "أبنائي";
+}
+
+<div class="page-header">
+    <h1 class="page-title">@ViewData["Title"]</h1>
+</div>
+
+<div class="row">
+    @if (Model.Any())
+    {
+        @foreach (var student in Model)
+        {
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card h-100 text-center">
+                    <div class="card-body">
+                        <i class="bi bi-person-badge text-primary" style="font-size: 3rem;"></i>
+                        <h5 class="card-title mt-3">@student.FullName</h5>
+                        <p class="card-text text-muted">عرض التقرير التفصيلي للحضور والدرجات والشكاوى.</p>
+                        <a asp-action="StudentDetails" asp-route-id="@student.Id" class="btn btn-primary mt-auto">عرض التقرير</a>
+                    </div>
+                </div>
+            </div>
+        }
+    }
+    else
+    {
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body text-center">
+                    <p class="mb-0">لم يتم ربط حسابك بأي طالب حتى الآن.</p>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+

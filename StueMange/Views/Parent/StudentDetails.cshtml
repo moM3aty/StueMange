@@ -1,0 +1,129 @@
+﻿@model Student
+@using System.Globalization
+@{
+    ViewData["Title"] = $"تقرير الطالب {Model.FullName}";
+}
+
+<div class="page-header">
+    <div>
+        <h1 class="page-title">@ViewData["Title"]</h1>
+        <p class="text-muted mb-0">الفصل الدراسي: @Model.Class.Name</p>
+    </div>
+    <a asp-action="Index" class="btn btn-secondary"><i class="bi bi-arrow-right"></i> العودة لقائمة الأبناء</a>
+</div>
+
+<div class="card">
+    <div class="card-header">
+        <ul class="nav nav-tabs card-header-tabs" id="studentDetailsTab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="grades-tab" data-bs-toggle="tab" data-bs-target="#grades" type="button" role="tab" aria-controls="grades" aria-selected="true">الدرجات</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="attendance-tab" data-bs-toggle="tab" data-bs-target="#attendance" type="button" role="tab" aria-controls="attendance" aria-selected="false">سجل الحضور</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="complaints-tab" data-bs-toggle="tab" data-bs-target="#complaints" type="button" role="tab" aria-controls="complaints" aria-selected="false">الشكاوى</button>
+            </li>
+        </ul>
+    </div>
+    <div class="card-body">
+        <div class="tab-content" id="studentDetailsTabContent">
+
+            <!-- Grades Tab -->
+            <div class="tab-pane fade show active" id="grades" role="tabpanel" aria-labelledby="grades-tab">
+                @if (Model.Grades.Any())
+                {
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>المادة</th>
+                                    <th>اسم الاختبار</th>
+                                    <th>الدرجة</th>
+                                    <th>تاريخ الاختبار</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var grade in Model.Grades.OrderBy(g => g.Subject).ThenByDescending(g => g.Date))
+                                {
+                                    <tr>
+                                        <td>@grade.Subject</td>
+                                        <td>@grade.ExamName</td>
+                                        <td>@grade.Score / @grade.MaxScore</td>
+                                        <td>@grade.Date.ToString("yyyy-MM-dd")</td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                }
+                else
+                {
+                    <p class="text-center text-muted mb-0">لا توجد درجات مسجلة حتى الآن.</p>
+                }
+            </div>
+
+            <!-- Attendance Tab -->
+            <div class="tab-pane fade" id="attendance" role="tabpanel" aria-labelledby="attendance-tab">
+                @if (Model.Attendances.Any())
+                {
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>التاريخ</th>
+                                    <th>الحالة</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var attendance in Model.Attendances.OrderByDescending(a => a.Date))
+                                {
+                                    <tr>
+                                        <td>@attendance.Date.ToString("dddd, dd MMMM yyyy", new CultureInfo("ar-EG"))</td>
+                                        <td>
+                                            @if (attendance.IsPresent)
+                                            {
+                                                <span class="badge bg-success-soft text-success-dark">حاضر</span>
+                                            }
+                                            else
+                                            {
+                                                <span class="badge bg-danger-soft text-danger-dark">غائب</span>
+                                            }
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                }
+                else
+                {
+                    <p class="text-center text-muted mb-0">لا يوجد سجل حضور مسجل حتى الآن.</p>
+                }
+            </div>
+
+            <!-- Complaints Tab -->
+            <div class="tab-pane fade" id="complaints" role="tabpanel" aria-labelledby="complaints-tab">
+                @if (Model.Complaints.Any())
+                {
+                    <div class="list-group">
+                        @foreach (var complaint in Model.Complaints.OrderByDescending(c => c.Date))
+                        {
+                            <div class="list-group-item">
+                                <div class="d-flex w-100 justify-content-between">
+                                    <h5 class="mb-1">شكوى بتاريخ: @complaint.Date.ToString("yyyy-MM-dd")</h5>
+                                </div>
+                                <p class="mb-1">@complaint.Description</p>
+                            </div>
+                        }
+                    </div>
+                }
+                else
+                {
+                    <p class="text-center text-muted mb-0">لا توجد شكاوى مسجلة بحق الطالب.</p>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+

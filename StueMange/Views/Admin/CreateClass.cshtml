@@ -1,0 +1,118 @@
+﻿@model CreateClassViewModel
+@{
+    ViewData["Title"] = "إضافة فصل جديد";
+}
+
+<div class="page-header">
+    <h1 class="page-title">@ViewData["Title"]</h1>
+</div>
+
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-body">
+                <form asp-action="CreateClass" class="dashboard-form">
+                    <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+                    <div class="mb-3">
+                        <label asp-for="Name" class="form-label"></label>
+                        <input asp-for="Name" class="form-control" />
+                        <span asp-validation-for="Name" class="text-danger"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">المدرسون</label>
+                        <div id="tags-input" class="tags-input-wrapper">
+                            <!-- Tags will be added here by JS -->
+                            <input type="text" id="teacher-search" class="form-control" placeholder="ابحث وأضف مدرس...">
+                        </div>
+                        <ul id="teacher-dropdown" class="d-none"></ul>
+                        <!-- Hidden inputs to store selected teacher IDs -->
+                        <div id="selected-teachers-container"></div>
+                        <span asp-validation-for="SelectedTeacherIds" class="text-danger"></span>
+                    </div>
+
+                    <div class="mt-4 d-flex justify-content-end gap-2">
+                        <a asp-action="ManageClasses" class="btn btn-secondary">إلغاء</a>
+                        <button type="submit" class="btn btn-primary">إضافة الفصل</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+    <script>
+        $(document).ready(function () {
+            const allTeachers = @Html.Raw(Json.Serialize(ViewBag.TeachersList as MultiSelectList));
+            let selectedTeachers = [];
+
+            const searchInput = $('#teacher-search');
+            const dropdown = $('#teacher-dropdown');
+            const tagsInput = $('#tags-input');
+            const hiddenContainer = $('#selected-teachers-container');
+
+            function renderTags() {
+                tagsInput.find('.tag-item').remove();
+                selectedTeachers.forEach(teacher => {
+                    const tag = $(`<div class="tag-item">${teacher.name}<span class="remove-tag" data-id="${teacher.id}">&times;</span></div>`);
+                    tagsInput.prepend(tag);
+                });
+            }
+
+            function renderHiddenInputs() {
+                hiddenContainer.empty();
+                selectedTeachers.forEach((teacher, index) => {
+                    const hiddenInput = $(`<input type="hidden" name="SelectedTeacherIds[${index}]" value="${teacher.id}" />`);
+                    hiddenContainer.append(hiddenInput);
+                });
+            }
+
+            searchInput.on('keyup', function () {
+                const query = $(this).val().toLowerCase();
+                dropdown.empty().addClass('d-none');
+
+                if (query.length > 0) {
+                    const filteredTeachers = allTeachers.filter(t =>
+                        t.Text.toLowerCase().includes(query) && !selectedTeachers.some(st => st.id === t.Value)
+                    );
+
+                    if (filteredTeachers.length > 0) {
+                        filteredTeachers.forEach(teacher => {
+                            dropdown.append(`<li data-id="${teacher.Value}" data-name="${teacher.Text}">${teacher.Text}</li>`);
+                        });
+                        dropdown.removeClass('d-none');
+                    }
+                }
+            });
+
+            dropdown.on('click', 'li', function () {
+                const teacher = {
+                    id: $(this).data('id'),
+                    name: $(this).data('name')
+                };
+                selectedTeachers.push(teacher);
+                renderTags();
+                renderHiddenInputs();
+                searchInput.val('').focus();
+                dropdown.addClass('d-none');
+            });
+
+            tagsInput.on('click', '.remove-tag', function () {
+                const idToRemove = $(this).data('id');
+                selectedTeachers = selectedTeachers.filter(t => t.id != idToRemove);
+                renderTags();
+                renderHiddenInputs();
+            });
+
+            $(document).on('click', function (e) {
+                if (!$(e.target).closest('#tags-input, #teacher-dropdown').length) {
+                    dropdown.addClass('d-none');
+                }
+            });
+        });
+    </script>
+}
+

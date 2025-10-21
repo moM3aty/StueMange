@@ -1,0 +1,36 @@
+﻿@model IEnumerable<Complaint>
+@{
+    ViewData["Title"] = "إدارة الشكاوى";
+}
+
+<div class="page-header">
+    <h1 class="page-title">@ViewData["Title"]</h1>
+    <a asp-action="CreateComplaint" class="btn btn-primary"><i class="bi bi-plus-lg"></i> تسجيل شكوى جديدة</a>
+</div>
+
+<div class="card">
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-hover align-middle">
+                <thead>
+                    <tr>
+                        <th>التاريخ</th>
+                        <th>الطالب</th>
+                        <th>الشكوى</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.OrderByDescending(c => c.Date))
+                    {
+                        <tr>
+                            <td>@item.Date.ToString("yyyy-MM-dd")</td>
+                            <td>@Html.DisplayFor(modelItem => item.Student.FullName)</td>
+                            <td>@Html.DisplayFor(modelItem => item.Description)</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+

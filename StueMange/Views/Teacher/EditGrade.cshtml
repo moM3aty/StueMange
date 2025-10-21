@@ -1,0 +1,77 @@
+﻿@model EditGradeViewModel
+@{
+    ViewData["Title"] = "تعديل درجة";
+}
+
+<div class="page-header">
+    <h1 class="page-title">@ViewData["Title"]</h1>
+</div>
+
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-body">
+                <p class="mb-4"><strong>الطالب:</strong> @Model.StudentName</p>
+                <form id="grade-form" asp-action="EditGrade" class="dashboard-form">
+                    <input type="hidden" asp-for="Id" />
+                    <input type="hidden" asp-for="StudentId" />
+                    <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+                    <div class="mb-3">
+                        <label asp-for="ExamName" class="form-label"></label>
+                        <input asp-for="ExamName" class="form-control" />
+                        <span asp-validation-for="ExamName" class="text-danger"></span>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label asp-for="Score" class="form-label"></label>
+                            <input asp-for="Score" type="number" step="0.5" class="form-control" />
+                            <span asp-validation-for="Score" class="text-danger"></span>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label asp-for="MaxScore" class="form-label"></label>
+                            <input asp-for="MaxScore" type="number" class="form-control" />
+                            <span asp-validation-for="MaxScore" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="Date" class="form-label"></label>
+                        <input asp-for="Date" type="date" class="form-control" />
+                        <span asp-validation-for="Date" class="text-danger"></span>
+                    </div>
+
+                    <div class="mt-4 d-flex justify-content-end gap-2">
+                        <a asp-action="ManageGrades" asp-route-id="@ViewBag.ClassId" class="btn btn-secondary">إلغاء</a>
+                        <button type="submit" class="btn btn-primary">حفظ التعديلات</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+    <script>
+        document.getElementById('grade-form').addEventListener('submit', function (e) {
+            const scoreInput = document.getElementById('Score');
+            const maxScoreInput = document.getElementById('MaxScore');
+            const score = parseFloat(scoreInput.value);
+            const maxScore = parseFloat(maxScoreInput.value);
+
+            let validationSpan = scoreInput.nextElementSibling;
+            if (validationSpan && validationSpan.classList.contains('field-validation-error')) {
+                 validationSpan.textContent = '';
+            }
+
+            if (score > maxScore) {
+                e.preventDefault();
+                if (validationSpan) {
+                     validationSpan.textContent = 'درجة الطالب لا يمكن أن تكون أكبر من الدرجة الكلية.';
+                }
+            }
+        });
+    </script>
+}
+
